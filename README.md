@@ -65,7 +65,7 @@
 [7, 8]
 ```
 
-### 7. List slices with step (a[start\:end:step])
+### 7. List slices with step (a[start:end:step])
 ```python
 >>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> a[::2]
