@@ -1,7 +1,7 @@
 # python-tips
 40 Python Language Features and Tricks You May Not Know About
 
-### 1 Unpacking
+### 1. Unpacking
 ```python
 >>> a, b, c = 1, 2, 3
 >>> a, b, c
@@ -23,7 +23,7 @@
 4
 ```
 
-### 2 Unpacking for swapping variables
+### 2. Unpacking for swapping variables
 ```python
 >>> a, b = 1, 2
 >>> a, b = b, a
@@ -31,7 +31,7 @@
 (2, 1)
 ```
 
-### 3 Extended unpacking (Python 3 only)
+### 3. Extended unpacking (Python 3 only)
 ```python
 >>> a, *b, c = [1, 2, 3, 4, 5]
 >>> a
@@ -42,7 +42,7 @@
 5
 ```
 
-### 4 Negative indexing
+### 4. Negative indexing
 ```python
 >>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> a[-1]
@@ -51,21 +51,21 @@
 8
 ```
 
-### 5 List slices (a[start:end])
+### 5. List slices (a[start:end])
 ```python
 >>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> a[2:8]
 [2, 3, 4, 5, 6, 7]
 ```
 
-### 6 List slices with negative indexing
+### 6. List slices with negative indexing
 ```python
 >>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> a[-4:-2]
 [7, 8]
 ```
 
-### 7 List slices with step (a[start:end:step])
+### 7. List slices with step (a[start\:end:step])
 ```python
 >>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> a[::2]
@@ -76,7 +76,7 @@
 [2, 4, 6]
 ```
 
-### 8 List slices with negative step
+### 8. List slices with negative step
 ```python
 >>> a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 >>> a[::-1]
@@ -85,7 +85,7 @@
 [10, 8, 6, 4, 2, 0]
 ```
 
-### 9 List slice assignment
+### 9. List slice assignment
 ```python
 >>> a = [1, 2, 3, 4, 5]
 >>> a[2:3] = [0, 0]
@@ -99,7 +99,7 @@
 [1, 5]
 ```
 
-### 10 Naming slices (slice(start, end, step))
+### 10. Naming slices (slice(start, end, step))
 ```python
 >>> a = [0, 1, 2, 3, 4, 5]
 >>> LASTTHREE = slice(-3, None)
@@ -109,7 +109,7 @@ slice(-3, None, None)
 [3, 4, 5]
 ```
 
-### 11 Iterating over list index and value pairs (enumerate)
+### 11. Iterating over list index and value pairs (enumerate)
 ```python
 >>> a = ['Hello', 'world', '!']
 >>> for i, x in enumerate(a):
@@ -120,7 +120,7 @@ slice(-3, None, None)
 2: !
 ```
 
-### 12 Iterating over dictionary key and value pairs (dict.iteritems)
+### 12. Iterating over dictionary key and value pairs (dict.iteritems)
 ```python
 >>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 >>> for k, v in m.iteritems():
@@ -132,7 +132,7 @@ b: 2
 d: 4
 ```
 
-### 13 Zipping and unzipping lists and iterables
+### 13. Zipping and unzipping lists and iterables
 ```python
 >>> a = [1, 2, 3]
 >>> b = ['a', 'b', 'c']
@@ -143,7 +143,7 @@ d: 4
 [(1, 2, 3), ('a', 'b', 'c')]
 ```
 
-### 14 Grouping adjacent list items using zip
+### 14. Grouping adjacent list items using zip
 ```python
 >>> a = [1, 2, 3, 4, 5, 6]
 
@@ -168,7 +168,7 @@ d: 4
 [(1,), (2,), (3,), (4,), (5,), (6,)]
 ```
 
-### 15 Sliding windows (n-grams) using zip and iterators
+### 15. Sliding windows (n-grams) using zip and iterators
 ```python
 >>> from itertools import islice
 >>> def n_grams(a, n):
@@ -184,7 +184,7 @@ d: 4
 [(1, 2, 3, 4), (2, 3, 4, 5), (3, 4, 5, 6)]
 ```
 
-### 16 Inverting a dictionary using zip
+### 16. Inverting a dictionary using zip
 ```python
 >>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 >>> m.items()
@@ -196,7 +196,7 @@ d: 4
 {1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 ```
 
-### 17 Flattening lists
+### 17. Flattening lists
 ```python
 >>> a = [[1, 2], [3, 4], [5, 6]]
 >>> list(itertools.chain.from_iterable(a))
@@ -219,7 +219,7 @@ d: 4
 ```
 Note: according to Python's documentation on sum, itertools.chain.from_iterable is the preferred method for this.
 
-### 18 Generator expressions
+### 18. Generator expressions
 ```python
 >>> g = (x ** 2 for x in xrange(10))
 >>> next(g)
@@ -236,7 +236,7 @@ Note: according to Python's documentation on sum, itertools.chain.from_iterable 
 408
 ```
 
-### 19 Dictionary comprehensions
+### 19. Dictionary comprehensions
 ```python
 >>> m = {x: x ** 2 for x in range(5)}
 >>> m
@@ -247,7 +247,7 @@ Note: according to Python's documentation on sum, itertools.chain.from_iterable 
 {0: 'A0', 1: 'A1', 2: 'A2', 3: 'A3', 4: 'A4', 5: 'A5', 6: 'A6', 7: 'A7', 8: 'A8', 9: 'A9'}
 ```
 
-### 20 Inverting a dictionary using a dictionary comprehension
+### 20. Inverting a dictionary using a dictionary comprehension
 ```python
 >>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 >>> m
@@ -256,7 +256,7 @@ Note: according to Python's documentation on sum, itertools.chain.from_iterable 
 {1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 ```
 
-### 21 Named tuples (collections.namedtuple)
+### 21. Named tuples (collections.namedtuple)
 ```python
 >>> Point = collections.namedtuple('Point', ['x', 'y'])
 >>> p = Point(x=1.0, y=2.0)
@@ -268,7 +268,7 @@ Point(x=1.0, y=2.0)
 2.0
 ```
 
-### 22 Inheriting from named tuples
+### 22. Inheriting from named tuples
 ```python
 >>> class Point(collections.namedtuple('PointBase', ['x', 'y'])):
 ...     __slots__ = ()
@@ -281,7 +281,7 @@ Point(x=1.0, y=2.0)
 Point(x=3.0, y=5.0)
 ```
 
-### 23 Sets and set operations
+### 23. Sets and set operations
 ```python
 >>> A = {1, 2, 3, 3}
 >>> A
@@ -303,7 +303,7 @@ set([1, 2, 4, 5, 6, 7])
 True
 ```
 
-### 24 Multisets and multiset operations (collections.Counter)
+### 24. Multisets and multiset operations (collections.Counter)
 ```python
 >>> A = collections.Counter([1, 2, 2])
 >>> B = collections.Counter([2, 2, 3])
@@ -323,7 +323,7 @@ Counter({1: 1})
 Counter({3: 1})
 ```
 
-### 25 Most common elements in an iterable (collections.Counter)
+### 25. Most common elements in an iterable (collections.Counter)
 ```python
 >>> A = collections.Counter([1, 1, 2, 2, 3, 3, 3, 3, 4, 5, 6, 7])
 >>> A
@@ -334,7 +334,7 @@ Counter({3: 4, 1: 2, 2: 2, 4: 1, 5: 1, 6: 1, 7: 1})
 [(3, 4), (1, 2), (2, 2)]
 ```
 
-### 26 Double-ended queue (collections.deque)
+### 26. Double-ended queue (collections.deque)
 ```python
 >>> Q = collections.deque()
 >>> Q.append(1)
@@ -357,7 +357,7 @@ deque([2, 1, 3, 5])
 deque([5, 2, 1, 3])
 ```
 
-### 27 Double-ended queue with maximum length (collections.deque)
+### 27. Double-ended queue with maximum length (collections.deque)
 ```python
 >>> last_three = collections.deque(maxlen=3)
 >>> for i in xrange(10):
@@ -376,7 +376,7 @@ deque([5, 2, 1, 3])
 7, 8, 9
 ```
 
-### 28 Ordered dictionaries (collections.OrderedDict)
+### 28. Ordered dictionaries (collections.OrderedDict)
 ```python
 >>> m = dict((str(x), x) for x in range(10))
 >>> print ', '.join(m.keys())
@@ -389,7 +389,7 @@ deque([5, 2, 1, 3])
 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
 ```
 
-### 29 Default dictionaries (collections.defaultdict)
+### 29. Default dictionaries (collections.defaultdict)
 ```python
 >>> m = dict()
 >>> m['a']
@@ -415,7 +415,7 @@ KeyError: 'a'
 '[default value]'
 ```
 
-### 30 Using default dictionaries to represent simple trees
+### 30. Using default dictionaries to represent simple trees
 ```python
 >>> import json
 >>> tree = lambda: collections.defaultdict(tree)
@@ -451,7 +451,7 @@ KeyError: 'a'
 }
 ```
 
-### 31 Mapping objects to unique counting numbers (collections.defaultdict)
+### 31. Mapping objects to unique counting numbers (collections.defaultdict)
 ```python
 >>> import itertools, collections
 >>> value_to_numeric_map = collections.defaultdict(itertools.count().next)
@@ -467,7 +467,7 @@ KeyError: 'a'
 1
 ```
 
-### 32 Largest and smallest elements (heapq.nlargest and heapq.nsmallest)
+### 32. Largest and smallest elements (heapq.nlargest and heapq.nsmallest)
 ```python
 >>> a = [random.randint(0, 100) for __ in xrange(100)]
 >>> heapq.nsmallest(5, a)
@@ -476,7 +476,7 @@ KeyError: 'a'
 [100, 100, 99, 98, 98]
 ```
 
-### 33 Cartesian products (itertools.product)
+### 33. Cartesian products (itertools.product)
 ```python
 >>> for p in itertools.product([1, 2, 3], [4, 5]):
 (1, 4)
@@ -506,7 +506,7 @@ KeyError: 'a'
 1111
 ```
 
-### 34 Combinations and combinations with replacement (itertools.combinations and itertools.combinations_with_replacement)
+### 34. Combinations and combinations with replacement (itertools.combinations and itertools.combinations_with_replacement)
 ```python
 >>> for c in itertools.combinations([1, 2, 3, 4, 5], 3):
 ...     print ''.join(str(x) for x in c)
@@ -532,7 +532,7 @@ KeyError: 'a'
 33
 ```
 
-### 35 Permutations (itertools.permutations)
+### 35. Permutations (itertools.permutations)
 ```python
 >>> for p in itertools.permutations([1, 2, 3, 4]):
 ...     print ''.join(str(x) for x in p)
@@ -563,7 +563,7 @@ KeyError: 'a'
 4321
 ```
 
-### 36 Chaining iterables (itertools.chain)
+### 36. Chaining iterables (itertools.chain)
 ```python
 >>> a = [1, 2, 3, 4]
 >>> for p in itertools.chain(itertools.combinations(a, 2), itertools.combinations(a, 3)):
@@ -600,7 +600,7 @@ KeyError: 'a'
 (1, 2, 3, 4)
 ```
 
-### 37 Grouping rows by a given key (itertools.groupby)
+### 37. Grouping rows by a given key (itertools.groupby)
 ```python
 >>> from operator import itemgetter
 >>> import itertools
@@ -676,13 +676,13 @@ pre-presbyopic      hypermetrope            no                      normal      
 presbyopic          hypermetrope            no                      normal                  soft
 ```
 
-### 38 Start a static HTTP server in any directory
+### 38. Start a static HTTP server in any directory
 ```shell
 $ python -m SimpleHTTPServer 5000
 Serving HTTP on 0.0.0.0 port 5000 ...
 ```
 
-### 39 Learn the Zen of Python
+### 39. Learn the Zen of Python
 ```python
 >>> import this
 The Zen of Python, by Tim Peters
@@ -708,7 +708,7 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 ```
 
-### 40 Use C-Style Braces Instead of Indentation to Denote Scopes
+### 40. Use C-Style Braces Instead of Indentation to Denote Scopes
 ```python
 >>> from __future__ import braces
 ```
